@@ -1,13 +1,16 @@
 <template>
   <Header />
-  <HomeView />
+  <Hero />
+  <BillingDetails />
   <Footer />
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import HomeView from './views/HomeView.vue'
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import HomeView from './views/HomeView.vue';
+import BillingDetails from './components/BillingDetails.vue';
+import Hero from './components/Hero.vue';
 const oldScripts = [
   // 'oldjs/jquery.min.js',
   'oldjs/jquery-migrate-3.0.1.min.js',
@@ -24,35 +27,33 @@ const oldScripts = [
   'oldjs/scrollax.min.js',
   'oldjs/google-map.js',
   'oldjs/main.js'
-]
+];
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
-    HomeView
+    HomeView,
+    BillingDetails,
+    Hero
   },
   created() {
-    let oldScript = document.createElement('script')
-    oldScript.setAttribute('src', 'oldjs/jquery.min.js')
-    document.head.appendChild(oldScript)
-    
+    let oldScript = document.createElement('script');
+    oldScript.setAttribute('src', 'oldjs/jquery.min.js');
+    document.head.appendChild(oldScript);
   },
 
   mounted() {
     setTimeout(() => {
-      oldScripts.map(s => {
-        let oldScript = document.createElement('script')
-        oldScript.setAttribute('src', s)
-        document.head.appendChild(oldScript)
-     })
-    }, 100)
-    console.log("hear my message: ", this.msgdmd)
-  },
-}
+      oldScripts.map((s) => {
+        let oldScript = document.createElement('script');
+        oldScript.setAttribute('src', s);
+        document.head.appendChild(oldScript);
+      });
+    }, 100);
+    console.log('hear my message: ', this.msgdmd);
+  }
+};
 </script>
 
-<style>
-
-</style>
- 
+<style></style>
