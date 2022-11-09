@@ -310,13 +310,13 @@ export default {
   },
   mounted() {
     this.axios
-      .get('http://localhost:8081/api/product-detail', {
+      .get('/productDetail', {
         params: {
           id: this.id
         }
       })
       .then((response) => {
-        this.productDetail = response.data;
+        this.productDetail = response.data[0];
       });
   }
 };

@@ -36,23 +36,34 @@
         </div>
         <div class="row block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-white p-5 contact-form">
+            <form @submit.prevent="onSubmit" class="bg-white p-5 contact-form">
               <div class="form-group">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Your Name"
+                  v-model="name"
                 />
+                <p v-if="this.nameError" class="error">{{ this.nameError }}</p>
               </div>
               <div class="form-group">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Your Email"
+                  v-model="email"
                 />
+                <p v-if="this.emailError" class="error">
+                  {{ this.emailError }}
+                </p>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject" />
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Subject"
+                  v-model="subject"
+                />
               </div>
               <div class="form-group">
                 <textarea
@@ -60,8 +71,10 @@
                   id=""
                   cols="30"
                   rows="7"
+                  maxlength="500"
                   class="form-control"
                   placeholder="Message"
+                  v-model="message"
                 ></textarea>
               </div>
               <div class="form-group">
@@ -88,7 +101,51 @@ import DefaultLayout from '../components/DefaultLayout.vue';
 
 export default {
   name: 'Contact',
-  components: { DefaultLayout }
+  components: { DefaultLayout },
+  data() {
+    return {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+      nameError: '',
+      emailError: ''
+    };
+  },
+  methods: {
+    async onSubmit() {
+      if (!this.name) {
+        this.nameError = 'Name is required';
+      }
+
+      if (!this.email) {
+        this.emailError = 'Name is required';
+      }
+
+      if (!this.emailError && !this.nameError) {
+        const contact = {
+          name: this.name,
+          email: this.email,
+          subject: this.subject,
+          message: this.message
+        };
+        try {
+          const response = await this.axios.post('/contact', contact);
+          this.resetField();
+          alert('Thanks for your contact.');
+        } catch (error) {
+          alert('Failed to save your contact.');
+        }
+      }
+    },
+
+    resetField() {
+      this.name = '';
+      this.email = '';
+      this.subject = '';
+      this.message = '';
+    }
+  }
 };
 </script>
 

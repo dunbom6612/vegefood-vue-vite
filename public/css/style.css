@@ -13024,3 +13024,7 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+
+.error {
+  color: var(--red);
+}

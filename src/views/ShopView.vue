@@ -112,7 +112,7 @@ export default {
   methods: {},
   mounted() {
     this.axios
-      .get('http://localhost:8081/api/product-list')
+      .get('/products')
       .then((response) => {
         console.log(response.data);
         this.productList = response.data;
