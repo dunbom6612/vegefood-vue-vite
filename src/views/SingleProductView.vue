@@ -35,7 +35,11 @@
                 >
               </p>
             </div>
-            <p class="price"><span>$120.00</span></p>
+            <p class="price">
+              <span>{{
+                `${getNormalizedPrice(this.productDetail?.price || 0)}`
+              }}</span>
+            </p>
             <p>
               {{ productDetail?.description }}
             </p>
@@ -95,9 +99,9 @@
               </div>
             </div>
             <p>
-              <a href="cart.html" class="btn btn-black py-3 px-5"
-                >Add to Cart</a
-              >
+              <a class="btn btn-black py-3 px-5" @click="addTocart">
+                Add to Cart
+              </a>
             </p>
           </div>
         </div>
@@ -118,151 +122,37 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-3 ftco-animate">
+          <div
+            class="col-md-6 col-lg-3 ftco-animate"
+            v-for="product in relatedProducts"
+            :key="product.id"
+          >
             <div class="product">
               <a href="#" class="img-prod"
                 ><img
                   class="img-fluid"
-                  src="/images/product-1.jpg"
+                  :src="product.imagePath"
                   alt="Colorlib Template"
                 />
-                <span class="status">30%</span>
+                <span class="status" v-if="!!product.status">{{
+                  product.status
+                }}</span>
                 <div class="overlay"></div>
               </a>
               <div class="text py-3 pb-4 px-3 text-center">
-                <h3><a href="#">Bell Pepper</a></h3>
+                <h3>
+                  <a href="#">{{ product.name }}</a>
+                </h3>
                 <div class="d-flex">
                   <div class="pricing">
                     <p class="price">
-                      <span class="mr-2 price-dc">$120.00</span
-                      ><span class="price-sale">$80.00</span>
+                      <span class="mr-2 price-dc">{{
+                        `$${product.price}.00`
+                      }}</span
+                      ><span class="price-sale">{{
+                        `$${product.discountPrice}.00`
+                      }}</span>
                     </p>
-                  </div>
-                </div>
-                <div class="bottom-area d-flex px-3">
-                  <div class="m-auto d-flex">
-                    <a
-                      href="#"
-                      class="add-to-cart d-flex justify-content-center align-items-center text-center"
-                    >
-                      <span><i class="ion-ios-menu"></i></span>
-                    </a>
-                    <a
-                      href="#"
-                      class="buy-now d-flex justify-content-center align-items-center mx-1"
-                    >
-                      <span><i class="ion-ios-cart"></i></span>
-                    </a>
-                    <a
-                      href="#"
-                      class="heart d-flex justify-content-center align-items-center"
-                    >
-                      <span><i class="ion-ios-heart"></i></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="product">
-              <a href="#" class="img-prod"
-                ><img
-                  class="img-fluid"
-                  src="/images/product-2.jpg"
-                  alt="Colorlib Template"
-                />
-                <div class="overlay"></div>
-              </a>
-              <div class="text py-3 pb-4 px-3 text-center">
-                <h3><a href="#">Strawberry</a></h3>
-                <div class="d-flex">
-                  <div class="pricing">
-                    <p class="price"><span>$120.00</span></p>
-                  </div>
-                </div>
-                <div class="bottom-area d-flex px-3">
-                  <div class="m-auto d-flex">
-                    <a
-                      href="#"
-                      class="add-to-cart d-flex justify-content-center align-items-center text-center"
-                    >
-                      <span><i class="ion-ios-menu"></i></span>
-                    </a>
-                    <a
-                      href="#"
-                      class="buy-now d-flex justify-content-center align-items-center mx-1"
-                    >
-                      <span><i class="ion-ios-cart"></i></span>
-                    </a>
-                    <a
-                      href="#"
-                      class="heart d-flex justify-content-center align-items-center"
-                    >
-                      <span><i class="ion-ios-heart"></i></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="product">
-              <a href="#" class="img-prod"
-                ><img
-                  class="img-fluid"
-                  src="/images/product-3.jpg"
-                  alt="Colorlib Template"
-                />
-                <div class="overlay"></div>
-              </a>
-              <div class="text py-3 pb-4 px-3 text-center">
-                <h3><a href="#">Green Beans</a></h3>
-                <div class="d-flex">
-                  <div class="pricing">
-                    <p class="price"><span>$120.00</span></p>
-                  </div>
-                </div>
-                <div class="bottom-area d-flex px-3">
-                  <div class="m-auto d-flex">
-                    <a
-                      href="#"
-                      class="add-to-cart d-flex justify-content-center align-items-center text-center"
-                    >
-                      <span><i class="ion-ios-menu"></i></span>
-                    </a>
-                    <a
-                      href="#"
-                      class="buy-now d-flex justify-content-center align-items-center mx-1"
-                    >
-                      <span><i class="ion-ios-cart"></i></span>
-                    </a>
-                    <a
-                      href="#"
-                      class="heart d-flex justify-content-center align-items-center"
-                    >
-                      <span><i class="ion-ios-heart"></i></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="product">
-              <a href="#" class="img-prod"
-                ><img
-                  class="img-fluid"
-                  src="/images/product-4.jpg"
-                  alt="Colorlib Template"
-                />
-                <div class="overlay"></div>
-              </a>
-              <div class="text py-3 pb-4 px-3 text-center">
-                <h3><a href="#">Purple Cabbage</a></h3>
-                <div class="d-flex">
-                  <div class="pricing">
-                    <p class="price"><span>$120.00</span></p>
                   </div>
                 </div>
                 <div class="bottom-area d-flex px-3">
@@ -298,6 +188,8 @@
 
 <script>
 import DefaultLayout from '../components/DefaultLayout.vue';
+import { cartStore } from '../stores/cart';
+import { getNormalizedPrice } from '../utils/priceUtils';
 
 export default {
   name: 'SingleProduct',
@@ -305,8 +197,34 @@ export default {
   components: { DefaultLayout },
   data() {
     return {
-      productDetail: null
+      productDetail: null,
+      cartStore,
+      relatedProducts: []
     };
+  },
+  methods: {
+    addTocart() {
+      const foundedItem = cartStore.items.find(
+        (item) => item.product.id == this.id
+      );
+      const foundedItemIndex = cartStore.items.findIndex(
+        (item) => item.product.id == this.id
+      );
+
+      if (foundedItem) {
+        foundedItem.quantity = foundedItem.quantity + 1;
+        cartStore.items[foundedItemIndex] = foundedItem;
+      } else {
+        const newProduct = {
+          product: this.productDetail,
+          quantity: 1
+        };
+        cartStore.items = [...cartStore.items, newProduct];
+      }
+
+      // console.log('cartStore', cartStore);
+    },
+    getNormalizedPrice
   },
   mounted() {
     this.axios
@@ -317,10 +235,21 @@ export default {
       })
       .then((response) => {
         this.productDetail = response.data[0];
+      })
+      .catch((error) => {
+        alert('Failed to get product detail');
+      });
+    this.axios
+      .get('/relatedProducts')
+      .then((response) => {
+        this.relatedProducts = response.data;
+      })
+      .catch((error) => {
+        alert('Failed to get related product list');
       });
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style></style>
+<style scoped></style>

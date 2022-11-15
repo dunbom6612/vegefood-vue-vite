@@ -33,7 +33,7 @@
                   :src="product.imagePath"
                   alt="Colorlib Template"
                 />
-                <span class="status">{{ product.status + '%' }}</span>
+                <span class="status" v-if="!!product.status">{{ product.status + '%' }}</span>
                 <div class="overlay"></div>
               </router-link>
               <div class="text py-3 pb-4 px-3 text-center">
@@ -114,7 +114,6 @@ export default {
     this.axios
       .get('/products')
       .then((response) => {
-        console.log(response.data);
         this.productList = response.data;
       });
   }

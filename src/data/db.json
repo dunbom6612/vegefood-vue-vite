@@ -1,0 +1,360 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Bell Pepper",
+      "imagePath": "/images/product-1.jpg",
+      "status": 30,
+      "price": 120,
+      "discountPrice": 80
+    },
+    {
+      "id": 2,
+      "name": "Strawberry",
+      "imagePath": "/images/product-2.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 119
+    },
+    {
+      "id": 3,
+      "name": "Green Beans",
+      "imagePath": "/images/product-3.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 119
+    },
+    {
+      "id": 4,
+      "name": "Purple Cabbage",
+      "imagePath": "/images/product-4.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 119
+    },
+    {
+      "id": 5,
+      "name": "Tomatoe",
+      "imagePath": "/images/product-5.jpg",
+      "status": 30,
+      "price": 120,
+      "discountPrice": 80
+    },
+    {
+      "id": 6,
+      "name": "Brocolli",
+      "imagePath": "/images/product-6.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 119
+    },
+    {
+      "id": 7,
+      "name": "Carrots",
+      "imagePath": "/images/product-7.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 98
+    },
+    {
+      "id": 8,
+      "name": "Fruit Juice",
+      "imagePath": "/images/product-8.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 202
+    }
+  ],
+  "relatedProducts": [
+    {
+      "id": 1,
+      "name": "Bell Pepper",
+      "imagePath": "/images/product-1.jpg",
+      "status": 30,
+      "price": 120,
+      "discountPrice": 80
+    },
+    {
+      "id": 2,
+      "name": "Strawberry",
+      "imagePath": "/images/product-2.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 119
+    },
+    {
+      "id": 3,
+      "name": "Green Beans",
+      "imagePath": "/images/product-3.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 119
+    },
+    {
+      "id": 4,
+      "name": "Purple Cabbage",
+      "imagePath": "/images/product-4.jpg",
+      "status": 0,
+      "price": 119,
+      "discountPrice": 119
+    }
+  ],
+  "productDetail": [
+    {
+      "id": 1,
+      "name": "Bell Pepper",
+      "imagePath": "/images/product-1.jpg",
+      "score": 5,
+      "votes": 100,
+      "sold": 500,
+      "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+      "availableQuantity": 600,
+      "price": 80
+    },
+    {
+      "id": 2,
+      "name": "Strawberry",
+      "imagePath": "/images/product-2.jpg",
+      "score": 5,
+      "votes": 100,
+      "sold": 500,
+      "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+      "availableQuantity": 600,
+      "price": 119
+    },
+    {
+      "id": 3,
+      "name": "Green Beans",
+      "imagePath": "/images/product-3.jpg",
+      "score": 5,
+      "votes": 100,
+      "sold": 500,
+      "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+      "availableQuantity": 600,
+      "price": 119
+    },
+    {
+      "id": 4,
+      "name": "Purple Cabbage",
+      "imagePath": "/images/product-4.jpg",
+      "score": 5,
+      "votes": 100,
+      "sold": 500,
+      "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+      "availableQuantity": 600,
+      "price": 119
+    },
+    {
+      "id": 5,
+      "name": "Tomatoe",
+      "imagePath": "/images/product-5.jpg",
+      "score": 5,
+      "votes": 100,
+      "sold": 500,
+      "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+      "availableQuantity": 600,
+      "price": 80
+    },
+    {
+      "id": 6,
+      "name": "Brocolli",
+      "imagePath": "/images/product-6.jpg",
+      "score": 5,
+      "votes": 100,
+      "sold": 500,
+      "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+      "availableQuantity": 600,
+      "price": 119
+    },
+    {
+      "id": 7,
+      "name": "Carrots",
+      "imagePath": "/images/product-7.jpg",
+      "score": 5,
+      "votes": 100,
+      "sold": 500,
+      "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+      "availableQuantity": 600,
+      "price": 98
+    },
+    {
+      "id": 8,
+      "name": "Fruit Juice",
+      "imagePath": "/images/product-8.jpg",
+      "score": 5,
+      "votes": 100,
+      "sold": 500,
+      "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+      "availableQuantity": 600,
+      "price": 202
+    }
+  ],
+  "contact": [
+    {
+      "id": 1,
+      "name": "",
+      "email": "",
+      "subject": "",
+      "message": ""
+    },
+    {
+      "name": "123123123",
+      "email": "123123",
+      "subject": "123123",
+      "message": "1323123",
+      "id": 2
+    },
+    {
+      "name": "123123",
+      "email": "213123",
+      "subject": "12312",
+      "message": "31231231",
+      "id": 3
+    }
+  ],
+  "bookingOrder": [
+    {
+      "id": 1,
+      "items": [
+        {
+          "productId": 7,
+          "quantity": 1
+        }
+      ],
+      "shipping": 0,
+      "discount": 0,
+      "total": 119
+    },
+    {
+      "items": [
+        {
+          "product": {
+            "id": 2,
+            "name": "Strawberry",
+            "imagePath": "/images/product-2.jpg",
+            "score": 5,
+            "votes": 100,
+            "sold": 500,
+            "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+            "availableQuantity": 600,
+            "price": 119
+          },
+          "quantity": 3
+        }
+      ],
+      "shipping": 0,
+      "discount": 0,
+      "total": "357.00",
+      "firstName": "12312312",
+      "lastName": "31231231",
+      "country": "Italy",
+      "streetaddress": "123123",
+      "apartment": "sadasda",
+      "city": "asdasd",
+      "postCode": "asdasd",
+      "phone": "asdasd",
+      "email": "asdasda",
+      "payMethod": "bank",
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "product": {
+            "id": 3,
+            "name": "Green Beans",
+            "imagePath": "/images/product-3.jpg",
+            "score": 5,
+            "votes": 100,
+            "sold": 500,
+            "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+            "availableQuantity": 600,
+            "price": 119
+          },
+          "quantity": 1
+        }
+      ],
+      "shipping": 0,
+      "discount": 0,
+      "total": "119.00",
+      "firstName": "123123123",
+      "lastName": "312312123",
+      "country": "South Korea",
+      "streetaddress": "12312312312",
+      "apartment": "123123",
+      "city": "3123123",
+      "postCode": "123123",
+      "phone": "12312312",
+      "email": "3123123",
+      "payMethod": "bank",
+      "status": "pending",
+      "id": 3
+    },
+    {
+      "items": [
+        {
+          "product": {
+            "id": 1,
+            "name": "Bell Pepper",
+            "imagePath": "/images/product-1.jpg",
+            "score": 5,
+            "votes": 100,
+            "sold": 500,
+            "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+            "availableQuantity": 600,
+            "price": 80
+          },
+          "quantity": 1
+        }
+      ],
+      "shipping": 0,
+      "discount": 0,
+      "total": "80.00",
+      "firstName": "123213",
+      "lastName": "12312312",
+      "country": "Philippines",
+      "streetaddress": "239",
+      "apartment": "Xuan THuy",
+      "city": "Hanoi",
+      "postCode": "123123123",
+      "phone": "312312",
+      "email": "12312312312",
+      "payMethod": "bank",
+      "status": "pending",
+      "id": 4
+    },
+    {
+      "items": [
+        {
+          "product": {
+            "id": 3,
+            "name": "Green Beans",
+            "imagePath": "/images/product-3.jpg",
+            "score": 5,
+            "votes": 100,
+            "sold": 500,
+            "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.",
+            "availableQuantity": 600,
+            "price": 119
+          },
+          "quantity": 1
+        }
+      ],
+      "shipping": 0,
+      "discount": 0,
+      "total": "119.00",
+      "firstName": "Huy",
+      "lastName": "Pham",
+      "country": "Italy",
+      "streetaddress": "239",
+      "apartment": "Xuân Thủy",
+      "city": "Hà Nội",
+      "postCode": "12321312",
+      "phone": "11232131200",
+      "email": "test123@example.com",
+      "payMethod": "bank",
+      "status": "pending",
+      "id": 5
+    }
+  ]
+}

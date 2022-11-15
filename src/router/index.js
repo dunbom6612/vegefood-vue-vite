@@ -29,7 +29,7 @@ const router = createRouter({
     },
     {
       path: '/about',
-      name: 'About',
+      name: 'About us',
       component: () => import('../views/AboutView.vue')
     },
     {
@@ -56,6 +56,11 @@ const router = createRouter({
       path: '/wishlist',
       name: 'WishList',
       component: () => import('../views/WishListView.vue')
+    },
+    {
+      path: '/checkout',
+      name: 'Checkout',
+      component: () => import('../views/CheckoutView.vue')
     }
   ]
 });

@@ -230,7 +230,7 @@
                 </p>
                 <p class="d-flex">
                   <span>Discount</span>
-                  <span>$3.00</span>
+                  <span>$0.00</span>
                 </p>
                 <hr />
                 <p class="d-flex total-price">
@@ -426,7 +426,6 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log('submitted', this.form);
       this.errors.isAccept = !this.form.isAccept;
       if (!this.form.isAccept) return;
 
@@ -439,8 +438,6 @@ export default {
       this.errors.emailaddress = !validateEmail(this.form.emailaddress);
       this.errors.shipping = !validateShippingMethod(this.form.shipping);
       this.errors.postcodezip = !validatePostcode(this.form.postcodezip);
-
-      console.log(' this.errors.firstname', this.errors.firstname);
 
       if (Object.values(this.errors).every((error) => !error)) {
         alert('Submit successfuly!');

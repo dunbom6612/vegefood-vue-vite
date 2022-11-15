@@ -17,27 +17,34 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="text-center">
+                  <tr
+                    class="text-center"
+                    v-for="item in cartStore.items"
+                    :key="item.product.id"
+                  >
                     <td class="product-remove">
-                      <a href="#"><span class="ion-ios-close"></span></a>
+                      <a @click="onDelete(item.product.id)"
+                        ><span class="ion-ios-close"></span
+                      ></a>
                     </td>
 
                     <td class="image-prod">
                       <div
                         class="img"
-                        style="background-image: url(images/product-3.jpg)"
+                        :style="`background-image: url(${item.product.imagePath})`"
                       ></div>
                     </td>
 
                     <td class="product-name">
-                      <h3>Bell Pepper</h3>
+                      <h3>{{ item.product.name }}</h3>
                       <p>
-                        Far far away, behind the word mountains, far from the
-                        countries
+                        {{ item.product.description }}
                       </p>
                     </td>
 
-                    <td class="price">$4.90</td>
+                    <td class="price">
+                      {{ `$${getNormalizedPrice(item.product?.price || 0)}` }}
+                    </td>
 
                     <td class="quantity">
                       <div class="input-group mb-3">
@@ -45,53 +52,20 @@
                           type="text"
                           name="quantity"
                           class="quantity form-control input-number"
-                          value="1"
+                          :value="item.quantity || 0"
                           min="1"
                           max="100"
                         />
                       </div>
                     </td>
 
-                    <td class="total">$4.90</td>
-                  </tr>
-                  <!-- END TR-->
-
-                  <tr class="text-center">
-                    <td class="product-remove">
-                      <a href="#"><span class="ion-ios-close"></span></a>
+                    <td class="total">
+                      {{
+                        `$${getNormalizedPrice(
+                          item.product?.price * item.quantity || 0
+                        )}`
+                      }}
                     </td>
-
-                    <td class="image-prod">
-                      <div
-                        class="img"
-                        style="background-image: url(images/product-4.jpg)"
-                      ></div>
-                    </td>
-
-                    <td class="product-name">
-                      <h3>Bell Pepper</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the
-                        countries
-                      </p>
-                    </td>
-
-                    <td class="price">$15.70</td>
-
-                    <td class="quantity">
-                      <div class="input-group mb-3">
-                        <input
-                          type="text"
-                          name="quantity"
-                          class="quantity form-control input-number"
-                          value="1"
-                          min="1"
-                          max="100"
-                        />
-                      </div>
-                    </td>
-
-                    <td class="total">$15.70</td>
                   </tr>
                   <!-- END TR-->
                 </tbody>
@@ -163,7 +137,7 @@
               <h3>Cart Totals</h3>
               <p class="d-flex">
                 <span>Subtotal</span>
-                <span>$20.60</span>
+                <span>{{ `$${subTotal1() || 0}` }}</span>
               </p>
               <p class="d-flex">
                 <span>Delivery</span>
@@ -171,17 +145,17 @@
               </p>
               <p class="d-flex">
                 <span>Discount</span>
-                <span>$3.00</span>
+                <span>$0.00</span>
               </p>
               <hr />
               <p class="d-flex total-price">
                 <span>Total</span>
-                <span>$17.60</span>
+                <span>{{ `$${subTotal || 0}` }}</span>
               </p>
             </div>
             <p>
-              <a href="checkout.html" class="btn btn-primary py-3 px-4"
-                >Proceed to Checkout</a
+              <router-link to="/checkout" class="btn btn-primary py-3 px-4"
+                >Proceed to Checkout</router-link
               >
             </p>
           </div>
@@ -193,10 +167,43 @@
 
 <script>
 import DefaultLayout from '../components/DefaultLayout.vue';
+import { cartStore } from '../stores/cart';
+import { getNormalizedPrice } from '../utils/priceUtils';
 
 export default {
   name: 'Cart',
-  components: { DefaultLayout }
+  components: { DefaultLayout },
+  data() {
+    return {
+      cartStore
+    };
+  },
+  methods: {
+    getNormalizedPrice,
+    onDelete(productId) {
+      cartStore.items = cartStore.items.filter(
+        (item) => item.product.id !== productId
+      );
+    },
+    subTotal1() {
+      console.log('run into subTotal1');
+      return getNormalizedPrice(
+        cartStore.items.reduce((total, current) => {
+          return total + current.product.price * current.quantity;
+        }, 0)
+      );
+    }
+  },
+  computed: {
+    subTotal() {
+      console.log('run into subTotal');
+      return getNormalizedPrice(
+        cartStore.items.reduce((total, current) => {
+          return total + current.product.price * current.quantity;
+        }, 0)
+      );
+    }
+  }
 };
 </script>
 

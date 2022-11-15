@@ -1,7 +1,7 @@
 <template>
   <section id="home-section" class="hero">
     <div class="home-slider owl-carousel">
-      <div class="slider-item item-1">
+      <div class="slider-item" style="background-image: url(images/bg_1.jpg)">
         <div class="overlay"></div>
         <div class="container">
           <div
@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <div class="slider-item item-2">
+      <div class="slider-item" style="background-image: url(images/bg_2.jpg)">
         <div class="overlay"></div>
         <div class="container">
           <div
@@ -364,12 +364,66 @@ import Header from '../components/Header.vue';
 
 export default {
   name: 'Home',
-  components: { Header, Footer }
+  components: { Header, Footer },
+  mounted() {
+    var carousel = function () {
+      $('.home-slider').owlCarousel({
+        loop: true,
+        autoplay: true,
+        margin: 0,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        nav: false,
+        autoplayHoverPause: false,
+        items: 1,
+        navText: [
+          "<span class='ion-md-arrow-back'></span>",
+          "<span class='ion-chevron-right'></span>"
+        ],
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 1
+          },
+          1000: {
+            items: 1
+          }
+        }
+      });
+
+      $('.carousel-testimony').owlCarousel({
+        center: true,
+        loop: true,
+        items: 1,
+        margin: 30,
+        stagePadding: 0,
+        nav: false,
+        navText: [
+          '<span class="ion-ios-arrow-back">',
+          '<span class="ion-ios-arrow-forward">'
+        ],
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 3
+          },
+          1000: {
+            items: 3
+          }
+        }
+      });
+    };
+    carousel();
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .slider-item.item-1 {
   background-image: url(../assets/images/bg_1.jpg);
 }

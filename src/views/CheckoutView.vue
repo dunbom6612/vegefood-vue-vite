@@ -4,19 +4,29 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-7 ftco-animate">
-            <form action="#" class="billing-form">
+            <form class="billing-form">
               <h3 class="mb-4 billing-heading">Billing Details</h3>
               <div class="row align-items-end">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="firstname">Firt Name</label>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder=""
+                      v-model="firstName"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="lastname">Last Name</label>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder=""
+                      v-model="lastName"
+                    />
                   </div>
                 </div>
                 <div class="w-100"></div>
@@ -27,13 +37,18 @@
                       <div class="icon">
                         <span class="ion-ios-arrow-down"></span>
                       </div>
-                      <select name="" id="" class="form-control">
-                        <option value="">France</option>
-                        <option value="">Italy</option>
-                        <option value="">Philippines</option>
-                        <option value="">South Korea</option>
-                        <option value="">Hongkong</option>
-                        <option value="">Japan</option>
+                      <select
+                        name=""
+                        id=""
+                        class="form-control"
+                        v-model="country"
+                      >
+                        <option value="France">France</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="South Korea">South Korea</option>
+                        <option value="Hongkong">Hongkong</option>
+                        <option value="Japan">Japan</option>
                       </select>
                     </div>
                   </div>
@@ -46,6 +61,7 @@
                       type="text"
                       class="form-control"
                       placeholder="House number and street name"
+                      v-model="streetaddress"
                     />
                   </div>
                 </div>
@@ -55,6 +71,7 @@
                       type="text"
                       class="form-control"
                       placeholder="Appartment, suite, unit etc: (optional)"
+                      v-model="apartment"
                     />
                   </div>
                 </div>
@@ -62,26 +79,46 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="towncity">Town / City</label>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder=""
+                      v-model="city"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="postcodezip">Postcode / ZIP *</label>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder=""
+                      v-model="postCode"
+                    />
                   </div>
                 </div>
                 <div class="w-100"></div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="phone">Phone</label>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder=""
+                      v-model="phone"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="emailaddress">Email Address</label>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder=""
+                      v-model="email"
+                    />
                   </div>
                 </div>
                 <div class="w-100"></div>
@@ -110,7 +147,7 @@
                   <h3 class="billing-heading mb-4">Cart Total</h3>
                   <p class="d-flex">
                     <span>Subtotal</span>
-                    <span>$20.60</span>
+                    <span>{{ `$${subTotal || 0}` }}</span>
                   </p>
                   <p class="d-flex">
                     <span>Delivery</span>
@@ -118,12 +155,12 @@
                   </p>
                   <p class="d-flex">
                     <span>Discount</span>
-                    <span>$3.00</span>
+                    <span>$0.00</span>
                   </p>
                   <hr />
                   <p class="d-flex total-price">
                     <span>Total</span>
-                    <span>$17.60</span>
+                    <span>{{ `$${subTotal || 0}` }}</span>
                   </p>
                 </div>
               </div>
@@ -134,7 +171,13 @@
                     <div class="col-md-12">
                       <div class="radio">
                         <label
-                          ><input type="radio" name="optradio" class="mr-2" />
+                          ><input
+                            type="radio"
+                            name="optradio"
+                            v-model="payMethod"
+                            class="mr-2"
+                            value="bank"
+                          />
                           Direct Bank Tranfer</label
                         >
                       </div>
@@ -144,9 +187,15 @@
                     <div class="col-md-12">
                       <div class="radio">
                         <label
-                          ><input type="radio" name="optradio" class="mr-2" />
-                          Check Payment</label
-                        >
+                          ><input
+                            type="radio"
+                            name="optradio"
+                            v-model="payMethod"
+                            class="mr-2"
+                            value="checkPayment"
+                          />
+                          Check Payment
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -154,7 +203,13 @@
                     <div class="col-md-12">
                       <div class="radio">
                         <label
-                          ><input type="radio" name="optradio" class="mr-2" />
+                          ><input
+                            type="radio"
+                            name="optradio"
+                            v-model="payMethod"
+                            value="paypal"
+                            class="mr-2"
+                          />
                           Paypal</label
                         >
                       </div>
@@ -164,14 +219,26 @@
                     <div class="col-md-12">
                       <div class="checkbox">
                         <label
-                          ><input type="checkbox" value="" class="mr-2" /> I
-                          have read and accept the terms and conditions</label
+                          ><input
+                            type="checkbox"
+                            value=""
+                            class="mr-2"
+                            v-model="isAcceptedTC"
+                          />
+                          I have read and accept the terms and conditions</label
                         >
                       </div>
                     </div>
                   </div>
                   <p>
-                    <a href="#" class="btn btn-primary py-3 px-4"
+                    <a
+                      @click="onSubmit"
+                      :class="
+                        !isAcceptedTC || !cartStore.items.length
+                          ? 'disabled'
+                          : ''
+                      "
+                      class="btn btn-primary py-3 px-4"
                       >Place an order</a
                     >
                   </p>
@@ -189,10 +256,94 @@
 
 <script>
 import DefaultLayout from '../components/DefaultLayout.vue';
+import { getNormalizedPrice } from '../utils/priceUtils';
+import { cartStore } from '../stores/cart';
 
 export default {
   name: 'Checkout',
-  components: { DefaultLayout }
+  components: { DefaultLayout },
+  data() {
+    return {
+      cartStore,
+      firstName: '',
+      lastName: '',
+      country: '',
+      streetaddress: '',
+      apartment: '',
+      city: '',
+      postCode: '',
+      phone: '',
+      email: '',
+      payMethod: '111',
+      isAcceptedTC: false
+    };
+  },
+  methods: {
+    getNormalizedPrice,
+    async onSubmit() {
+      if (
+        !this.streetaddress ||
+        !this.lastName ||
+        !this.firstName ||
+        !this.phone ||
+        !this.payMethod ||
+        !cartStore.items.length
+      ) {
+        return;
+      }
+
+      const bookingOrder = {
+        items: cartStore.items,
+        shipping: 0,
+        discount: 0,
+        total: this.subTotal,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        country: this.country,
+        streetaddress: this.streetaddress,
+        apartment: this.apartment,
+        city: this.city,
+        postCode: this.postCode,
+        phone: this.phone,
+        email: this.email,
+        payMethod: this.payMethod,
+        status: 'pending'
+      };
+
+      try {
+        const response = await this.axios.post('/bookingOrder', bookingOrder);
+        this.resetField();
+        cartStore.items = [];
+        // console.log(response.data);
+        alert('Thanks for your booking.');
+        this.$router.push('/shop');
+      } catch (error) {
+        alert('Failed to save your booking.');
+      }
+    },
+    resetField() {
+      this.firstName = '';
+      this.lastName = '';
+      this.country = '';
+      this.streetaddress = '';
+      this.apartment = '';
+      this.city = '';
+      this.postCode = '';
+      this.phone = '';
+      this.email = '';
+      this.payMethod = '';
+      this.isAcceptedTC = false;
+    }
+  },
+  computed: {
+    subTotal() {
+      return getNormalizedPrice(
+        cartStore.items.reduce((total, current) => {
+          return total + current.product.price * current.quantity;
+        }, 0)
+      );
+    }
+  }
 };
 </script>
 

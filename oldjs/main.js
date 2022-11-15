@@ -185,7 +185,6 @@
 				$('.number').each(function(){
 					var $this = $(this),
 						num = $this.data('number');
-						console.log(num);
 					$this.animateNumber(
 					  {
 					    number: num,
@@ -314,7 +313,7 @@
 
 	function makeTimer() {
 
-		var endTime = new Date("21 December 2019 9:56:00 GMT+01:00");			
+		var endTime = new Date("2022-12-24");			
 		endTime = (Date.parse(endTime) / 1000);
 
 		var now = new Date();

@@ -12,7 +12,7 @@
               >
                 <span class="icon-phone2"></span>
               </div>
-              <span class="text">+84 356014256</span>
+              <span class="text">+84 03260326</span>
             </div>
             <div class="col-md pr-4 d-flex topper align-items-center">
               <div
@@ -90,7 +90,8 @@
           </li>
           <li class="nav-item cta cta-colored">
             <router-link to="/cart" class="nav-link">
-              <span class="icon-shopping_cart"></span>[0]
+              <span class="icon-shopping_cart"></span
+              >{{ `[${cartStore.items.length || 0}]` }}
             </router-link>
           </li>
         </ul>
@@ -100,42 +101,19 @@
   <!-- END nav -->
 </template>
 
-<script setup></script>
+<script>
+import { cartStore } from '../stores/cart';
+
+export default {
+  name: 'Header',
+  components: {},
+  data() {
+    return {
+      cartStore
+    };
+  },
+};
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-.slider-item.item-1 {
-  background-image: url(../assets/images/bg_1.jpg);
-}
-.slider-item.item-2 {
-  background-image: url(../assets/images/bg_2.jpg);
-}
-
-.category-0 {
-  background-image: url(../assets/images/category.jpg);
-}
-.category-1 {
-  background-image: url(../assets/images/category-1.jpg);
-}
-.category-2 {
-  background-image: url(../assets/images/category-2.jpg);
-}
-.category-3 {
-  background-image: url(../assets/images/category-3.jpg);
-}
-.category-4 {
-  background-image: url(../assets/images/category-4.jpg);
-}
-.ftco-3 {
-  background-image: url(../assets/images/bg_3.jpg);
-}
-.person-1 {
-  background-image: url(../assets/images/person_1.jpg);
-}
-.person-2 {
-  background-image: url(../assets/images/person_2.jpg);
-}
-.person-3 {
-  background-image: url(../assets/images/person_3.jpg);
-}
-</style>
+<style></style>
